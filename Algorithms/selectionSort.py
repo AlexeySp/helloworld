@@ -8,10 +8,10 @@ def findMaxElementIndex(arr):
     return maxIndex
 
 def findMinElementIndex(arr):
-    min = 0
+    min = 1000000
     minIndex = 0
     for idx in range(len(arr)):
-        if(min >= arr[idx]):
+        if arr[idx] <= min:
             min = arr[idx]
             minIndex = idx
     return minIndex
@@ -24,10 +24,11 @@ def  selectionSort(arr, order = 'desc'):
         elif order.lower() == 'asc':
             sortedArr.append(arr.pop(findMinElementIndex(arr)))
         else:
-            print('Order type not found. Default asc')
+            if _ == 0 :
+                print('Order type not found. Default asc')
             sortedArr.append(arr.pop(findMinElementIndex(arr)))
     return sortedArr
 
-print(findMaxElementIndex([1, 5, 7]))
-print(findMinElementIndex([1, 5, 7]))
-print(selectionSort([5, 3, 2, 1, 123, 4, 17], 'asc'))
+# print(findMaxElementIndex([1, 5, 7]))
+# print(findMinElementIndex([5, 3, 2, 1, 123, 4, 17]))
+print(selectionSort([5, 3, 2, 1, 123, 4, 17], 'kex'))
